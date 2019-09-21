@@ -9,5 +9,6 @@ namespace sdds {
 	};
 	void read(School&);
 	int report(const School&);
+	void freeMem(School&);
 
 }

@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include<string.h>
 #include"Subject.h"
@@ -46,4 +48,13 @@ int sdds::report(const School& Sch) {
 	cout << "Total enrollment: " << total;
 	return total;
 
+}
+
+void sdds::freeMem(School& Sch) {
+	delete[]Sch.m_name;
+	int i;
+	for (i = 0; i < Sch.m_noOfSubjects; i++) {
+		freeMem(Sch.m_subjects[i]);
+	}
+	delete[]Sch.m_subjects;
 }

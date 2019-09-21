@@ -1,15 +1,7 @@
 ﻿  School.cpp
+C:\Users\jagdi\Documents\GitHub\college-work\OOPS\WS02\at_home\School.cpp(20,1): error C4996:  'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   schoolTester.cpp
-C:\Users\jagdi\Documents\GitHub\college-work\OOPS\WS02\at_home\schoolTester.cpp(18,21): error C2871:  'sdds': a namespace with this name does not exist
-C:\Users\jagdi\Documents\GitHub\college-work\OOPS\WS02\at_home\schoolTester.cpp(21,4): error C2065:  'School': undeclared identifier
-C:\Users\jagdi\Documents\GitHub\college-work\OOPS\WS02\at_home\schoolTester.cpp(21,11): error C2146:  syntax error: missing ';' before identifier 'S'
-C:\Users\jagdi\Documents\GitHub\college-work\OOPS\WS02\at_home\schoolTester.cpp(21,11): error C2065:  'S': undeclared identifier
-C:\Users\jagdi\Documents\GitHub\college-work\OOPS\WS02\at_home\schoolTester.cpp(22,9): error C2065:  'S': undeclared identifier
-C:\Users\jagdi\Documents\GitHub\college-work\OOPS\WS02\at_home\schoolTester.cpp(22,4): error C3861:  'read': identifier not found
-C:\Users\jagdi\Documents\GitHub\college-work\OOPS\WS02\at_home\schoolTester.cpp(23,11): error C2065:  'S': undeclared identifier
-C:\Users\jagdi\Documents\GitHub\college-work\OOPS\WS02\at_home\schoolTester.cpp(23,4): error C3861:  'report': identifier not found
-C:\Users\jagdi\Documents\GitHub\college-work\OOPS\WS02\at_home\schoolTester.cpp(24,12): error C2065:  'S': undeclared identifier
   Subject.cpp
   utils.cpp
   Generating Code...
-C:\Users\jagdi\Documents\GitHub\college-work\OOPS\WS02\at_home\schoolTester.cpp(24,4): error C3861:  'freeMem': identifier not found
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\string.h(133): message :  see declaration of 'strcpy'
