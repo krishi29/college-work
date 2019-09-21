@@ -30,7 +30,7 @@ void sdds::read(School& Sch) {
 	int i;
 	for (i = 0; i < Sch.m_noOfSubjects; i++) {
 		// display sequence no
-		cout << i + 1 << ") ------------------------------";
+		cout << i + 1 << ") ------------------------------" << endl;
 
 		// read ith element of subjects
 		read(Sch.m_subjects[i]);
@@ -45,7 +45,7 @@ int sdds::report(const School& Sch) {
 		int totalforsubject = report(Sch.m_subjects[i]);
 		total = total + totalforsubject;
 	}
-	cout << "Total enrollment: " << total;
+	cout << "Total enrollment: " << total << endl;
 	return total;
 
 }
