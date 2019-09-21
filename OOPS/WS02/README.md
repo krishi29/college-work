@@ -1,5 +1,7 @@
-Workshop 2 
+﻿Workshop 2 
 ===========
 
 Under construction….
 --------------------
+
+some text
