@@ -35,5 +35,15 @@ void sdds::read(School& Sch) {
 	}
 }
 
+int sdds::report(const School& Sch) {
+	cout << Sch.m_name << endl;
+	cout << "Subject Enrollments" << endl;
+	int i,total=0;
+	for (i = 0; i < Sch.m_noOfSubjects; i++) {
+		int totalforsubject = report(Sch.m_subjects[i]);
+		total = total + totalforsubject;
+	}
+	cout << "Total enrollment: " << total;
+	return total;
 
-
+}
