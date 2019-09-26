@@ -73,7 +73,7 @@ describe('Task 2 - toSeconds', function() {
     });
 });
 
-describe('Task 3 - formatPath', function() {
+describe.only('Task 3 - formatPath', function() {
     it('should format a simple Unix path', function() {
         const unixPath = formatPath('documents', 'file', 'txt');
         expect(unixPath).to.equal('/documents/file.txt');

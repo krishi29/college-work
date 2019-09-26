@@ -27,7 +27,7 @@
  */
 
 function formatEmailAddress(name, email) {
-    // Your code here...
+    return name + " <" + email + ">";
 }
 
 /**
@@ -41,7 +41,9 @@ function formatEmailAddress(name, email) {
  * Return the number of seconds for the given days as a Number.
  */
 function toSeconds(days) {
-    // Your code here...
+    days=days || 1;
+    days=Math.round(days);
+    return days*24*60*60;
 }
 
 /**
@@ -58,7 +60,19 @@ function toSeconds(days) {
  * Unix: "/documents/resume.txt" (no drive name, forward slashes)
  */
 function formatPath(dir, filename, ext, windowsDrive) {
-    // Your code here...
+    var path;
+    if(windowsDrive){
+        path = windowsDrive+'\\'+dir+'\\'+filename;
+        if(ext){
+            return path+"."+ext;
+        }
+        return path;
+    }
+    path='/'+dir+'/'+filename;
+    if(ext){
+        return path+"."+ext;
+    }
+    return path;
 }
 
 /**
