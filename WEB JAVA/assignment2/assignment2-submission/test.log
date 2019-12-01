@@ -1,0 +1,53 @@
+
+
+  Task 1 - util functions
+    formatPhoneNumber
+      √ should correctly format a phone number
+    generateUsername
+      √ should create a username from first name and last name
+      √ should only use first 4 characters of last name when creating a username
+      √ should use all characters in a short last name when creating a username
+    generateGoogleMapsURL
+      √ should generate a valid Google Maps URL for the example location from Google's docs
+      √ should generate a valid Google Maps URL for our sample data
+
+  Task 2 - user functions
+    getUserCount
+      √ should return correct number of users in an array of user Objects
+      √ should return 0 if no user list is passed
+    getStudents
+      √ should return an empty array if no users in the list are students
+      √ should return an array with all students
+      √ should find the correct number of students in sample data
+    getUsersWithGoodCredit
+      √ should return an empty array if no users in the list have min credit
+      √ should return all items that are equal to the min credit
+      √ should return all items that are greater than the min credit
+      √ should return an array with all users in the list with min credit
+      √ should find the correct number of users with good credit in sample data
+    setUsernames
+      √ should add a username property with correct values for a user in a list
+      √ should attach the username to the correct user in the list
+    getNextId
+      √ should return next id for a simple list
+      √ should return next id for the sample data
+    getMapURLs
+      √ should return expected id and Google Maps URL for each user
+    getPhoneList
+      √ should properly format name and phone number for a user
+      √ should properly format all sample data
+    groupByCountry
+      √ should contain the correct countries for a small list of users
+      √ should contain the correct countries for a larger list of users
+      √ should hold arrays of users for each country
+    addUsers
+      √ should add a single user, updating/including id as expected
+    extractUsersById
+      √ should remove a user by id
+      √ should remove multiple ids at once
+    sortByDateOfBirth
+      √ should sort users into the order of their birthdates youngest to oldest
+
+
+  30 passing (72ms)
+

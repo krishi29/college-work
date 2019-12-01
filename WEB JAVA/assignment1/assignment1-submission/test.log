@@ -1,0 +1,12 @@
+
+
+  Task 6 - oddNumbers
+    √ should return all odd numbers in a list as a formatted string
+    √ should return all odd numbers in a list, ignoring non-numbers
+    √ should not add trailing comma in list of one number
+    √ should return null if no arguments are passed in the list
+    √ should return null if all arguments are ignored or even in the list
+
+
+  5 passing (18ms)
+
