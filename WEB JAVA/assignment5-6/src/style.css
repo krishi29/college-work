@@ -1,0 +1,168 @@
+/** Add any CSS you need to this file. */
+/* Add a black background color to the top navigation */
+body{
+  margin:0;
+}
+
+html { 
+  background: url("../src/images/background-3.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    height: 75px;
+    padding: 20px 0 0 0;
+    background-color: #161616;
+    display: flex;
+    opacity: 0.8;
+}
+
+ul a{
+  text-align: center;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-decoration: none; 
+}
+
+.menucontainer input {
+  float: right;
+  text-align: left;
+  text-decoration: none;
+  font-size: 17px;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid transparent;
+  border-color: #fff;
+  background: transparent;
+  transition: width .6s;
+  caret-color:#fff;
+  color: #fff
+}
+
+.menucontainer input:focus{
+  outline: none;
+}
+
+.navcontainer{
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  height:60px;
+  font-family: sans-serif;
+  font-weight: 600;
+  display: flex;
+} 
+
+.menucontainer{
+  display:block;
+  display: flex;
+  width: 100%;
+}
+.menucontainer ul{
+  padding: 9px 20px 0 20px;
+  list-style: none;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1080px;
+  display: flex;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.banner-section{
+  min-height:70px;
+  min-width:100%;
+  float:left;
+}
+
+.content-section{
+  margin-left: 30px;
+  margin-right: 30px;
+  width:96%;
+  display:inline-flex;
+}
+
+.category-section{
+  max-width: 15%;
+  min-width: 15%;
+  border-left: 20px;
+  border-right:20px;
+}
+
+.menucontainer li{
+  text-align: center;
+  flex:1;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+  float:left;
+}
+
+.logocontainer img {
+  max-width: 100%;   
+  max-height: 40px;
+  float: left; 
+}
+
+.collapsible {
+  background-color: #161616;
+  color: white;
+  padding: 8px;
+  margin: 2px;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  border-radius: 10px;
+  width: 95%;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.product-section{
+  margin-left:30px;
+}
+
+.product-card{
+  width: 350px;
+  height: 350px;
+  float: left;
+  margin: 0px 15px 15px 15px;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: condensed;
+}
+
+.product-card img{
+  max-width:100%;
+  max-height:100%;
+}
+
+.product-details ul{
+  list-style: none;
+  padding-inline-start: 0px;
+  margin-block-start: 0;
+}
