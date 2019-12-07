@@ -5,7 +5,7 @@ body{
 }
 
 html { 
-  background: url("../src/images/background-3.jpg") no-repeat center center fixed; 
+  color:initial;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -149,16 +149,38 @@ ul a{
   width: 350px;
   height: 350px;
   float: left;
-  margin: 0px 15px 15px 15px;
+  position:relative;
+  margin: 0px 15px 60px 15px;
   font-family: sans-serif;
   font-weight: 700;
   font-style: italic;
   font-stretch: condensed;
 }
 
-.product-card img{
+.product-image{
+  position: absolute;
   max-width:100%;
   max-height:100%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transition: opacity 1s ease-in-out;
+}
+
+.product-images{
+	top:0;
+	position: absolute;
+	width: 350px;
+	height:280px;
+	text-align: center;
+	overflow:hidden;
+	background-color: #161616;
+}
+
+.product-details{
+	position:absolute;
+	display:block;	
+	bottom:0;
 }
 
 .product-details ul{
