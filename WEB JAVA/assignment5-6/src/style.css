@@ -28,6 +28,10 @@ html {
     z-index: 99;
 }
 
+.logoContainer{
+  min-width:15%;
+}
+
 .menulink{
   text-align: center;
   border: 0 none;
@@ -37,7 +41,8 @@ html {
   text-decoration: none; 
 }
 
-.menucontainer input {
+.searchcontainer input {
+  padding: 9px 20px 0 20px;
   align-content: right;
   text-align: left;
   text-decoration: none;
@@ -53,8 +58,13 @@ html {
   color: #fff
 }
 
-.menucontainer input:focus{
+.searchcontainer input:focus{
   outline: none;
+}
+
+.searchcontainer{
+  width:50%;
+  align-content: right;
 }
 
 .navcontainer{
@@ -69,13 +79,12 @@ html {
 .menucontainer{
   display:block;
   display: flex;
-  width: 100%;
+  width: 50%;
 }
 .menucontainer ul{
   padding: 9px 20px 0 20px;
   list-style: none;
   margin: 0 auto;
-  width: 100%;
   max-width: 1080px;
   display: flex;
   margin-block-start: 1em;
@@ -83,6 +92,20 @@ html {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   padding-inline-start: 40px;
+}
+
+.searchcontainer div{
+  padding: 9px 20px 0 20px;
+  list-style: none;
+  margin: 0 auto;
+  display: flex;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  position: absolute;
+  right: 10%;
 }
 
 .banner-section{
@@ -104,15 +127,14 @@ html {
   border-left: 20px;
   border-right:20px;
   position: sticky;
+  opacity: 0.8;
 }
 
 .menucontainer li{
   text-align: center;
   flex:1;
-  border: 0 none;
-  margin: 0;
-  padding: 0;
-  float:left;
+  min-width:50px;
+  margin-right: 60px;
 }
 
 .logocontainer img {

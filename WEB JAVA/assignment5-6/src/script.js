@@ -74,6 +74,9 @@ function showAllProducts(){
 
     var productsDiv = document.getElementById("products");
 
+    console.log("my productdiv id is: " + productsDiv.id);
+    console.log("my product div id is " + productsDiv.getAttribute("class"));
+
     var i =0;
     for(i=0; i<this.productsData.length; i++){
         var element = this.productsData[i];
