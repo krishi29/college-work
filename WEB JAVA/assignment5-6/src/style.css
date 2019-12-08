@@ -5,6 +5,9 @@ body{
 }
 
 html { 
+  font-family: Gotham, Verdana, sans-serif;
+  font-style:normal;
+  font-weight:400;
   color:initial;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -20,9 +23,12 @@ html {
     background-color: #161616;
     display: flex;
     opacity: 0.8;
+    top:0;
+    position: sticky;
+    z-index: 99;
 }
 
-ul a{
+.menulink{
   text-align: center;
   border: 0 none;
   margin: 0;
@@ -32,10 +38,10 @@ ul a{
 }
 
 .menucontainer input {
-  float: right;
+  align-content: right;
   text-align: left;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 16px;
   border: 0 none;
   margin: 0;
   padding: 0;
@@ -56,7 +62,6 @@ ul a{
   margin-left: auto;
   margin-right: auto;
   height:60px;
-  font-family: sans-serif;
   font-weight: 600;
   display: flex;
 } 
@@ -87,9 +92,9 @@ ul a{
 }
 
 .content-section{
-  margin-left: 30px;
-  margin-right: 30px;
-  width:96%;
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  width:85%;
   display:inline-flex;
 }
 
@@ -98,6 +103,7 @@ ul a{
   min-width: 15%;
   border-left: 20px;
   border-right:20px;
+  position: sticky;
 }
 
 .menucontainer li{
@@ -146,18 +152,16 @@ ul a{
 }
 
 .product-card{
-  width: 350px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
   float: left;
   position:relative;
   margin: 0px 15px 60px 15px;
-  font-family: sans-serif;
-  font-weight: 700;
-  font-style: italic;
-  font-stretch: condensed;
+  font-weight: 600;
+  font-size:14px;
 }
 
-.product-image{
+.product-images img{
   position: absolute;
   max-width:100%;
   max-height:100%;
@@ -170,9 +174,8 @@ ul a{
 .product-images{
 	top:0;
 	position: absolute;
-	width: 350px;
-	height:280px;
-	text-align: center;
+	width: 400px;
+	height:320px;
 	overflow:hidden;
 	background-color: #161616;
 }
@@ -187,4 +190,62 @@ ul a{
   list-style: none;
   padding-inline-start: 0px;
   margin-block-start: 0;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.prev{
+  left: 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 1px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.activedot, .activedot:hover {
+  background-color: #717171;
+}
+
+.slidedots{
+  position:absolute;
+  text-align: center;
+  font-size: 5;
+  bottom:45px;
+  width:100%;
+}
+
+.inactiveimage{
+  opacity: 0;
+}
+
+.activeimage{
+  opacity: 1;
 }
