@@ -121,10 +121,6 @@ input[type="checkbox"]{
 .banner-section{
   min-height:80px;
   min-width:100%;
-  float:left;
-  text-align: center;
-  padding-top: none;
-  font-size: 40px;
 }
 
 .content-section{
@@ -199,15 +195,19 @@ input[type="checkbox"]{
   margin-bottom: 12px;
   margin-top: 5px;
   text-decoration: underline;
+  font-weight: bold;
   font-style: italic;
+  font-size: 12px;
 }
 
 .selectOnlySpan{
   text-decoration: underline;
+  font-weight: bold;
   font-style: italic;
+  font-size: 10px;
   margin-left: 5px;
   float:right;
-  margin-right: 10px;
+  margin-right: 12px;
 }
 
 .selectAllDiv:hover, .selectOnlySpan:hover{
@@ -247,15 +247,20 @@ input[type="checkbox"]{
 }
 
 .product-details{
-	position:absolute;
-	display:block;	
-	bottom:0;
+  display:block;	
+  position: absolute;
+  top: 360px;
 }
 
 .product-details ul{
   list-style: none;
   padding-inline-start: 0px;
   margin-block-start: 0;
+}
+
+.itemDescription{
+  padding-top: 3px;
+  font-weight: 300;
 }
 
 .prev, .next {
@@ -300,11 +305,10 @@ input[type="checkbox"]{
 }
 
 .slidedots{
-  position:absolute;
   text-align: center;
-  font-size: 5;
-  bottom:45px;
   width:100%;
+  position: absolute;
+  top: 330px;
 }
 
 .inactiveimage{

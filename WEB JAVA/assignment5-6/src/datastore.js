@@ -1,58 +1,5 @@
 /** Add any JavaScript you need to this file. */
-window.productsData=[
-    {
-        "id":"acyearbuds",
-        "name":"ACY earbuds",
-        "description":"Wireless earbuds by ACY. Strong Bass and comfortable in the ear",
-        "price":"49.99",
-        "type":"headphones",
-        "categories":{
-            "subType":"earbuds",
-            "connection":"wireless",
-            "brand":"ACY"
-        },
-        "images":["acy earbuds1.jpg"]
-
-    },
-    {
-        "id":"airpods",
-        "name":"Airpods",
-        "description":"Airpods by apple. Great sound and great battery life",
-        "price":"219.99",
-        "type":"headphones",
-        "categories":{
-            "subType":"earbuds",
-            "connection":"wireless",
-            "brand":"Apple"
-        },
-        "images":["airpods 1.jpg", "airpods 2.jpg", "airpods 3.jpg", "airpods 4.jpg"]
-    },
-	{
-        "id":"airpodspro",
-        "name":"Airpods Pro",
-        "description":"Airpods Pro. Latest Version. Better than ever.",
-        "price":"299.99",
-        "type":"headphones",
-        "categories":{
-            "subType":"earbuds",
-            "connection":"wireless",
-            "brand":"Apple"
-        },
-        "images":["airpods pro 1.jpg","airpods pro 2.jpg"]
-    },
-    {
-        "id":"alexa",
-        "name":"Amazon Alexa",
-        "description":"Introducing Alexa, the smart speaker by Amazon.",
-        "price":"299.99",
-        "type":"speakers",
-        "categories":{
-            "subType":"smart",
-            "connection":"wireless",
-            "brand":"Amazon"
-        },
-        "images":["amazon alexa 1.jpg"]
-    },	
+window.productsData=[	
     {
         "id":"beatssolo",
         "name":"Beats Solo",
@@ -299,6 +246,59 @@ window.productsData=[
             "brand":"Generic"
         },
         "images":["generic speakers 1.jpg"]
+    },
+    {
+        "id":"acyearbuds",
+        "name":"ACY earbuds",
+        "description":"Wireless earbuds by ACY. Strong Bass and comfortable in the ear",
+        "price":"49.99",
+        "type":"headphones",
+        "categories":{
+            "subType":"earbuds",
+            "connection":"wireless",
+            "brand":"ACY"
+        },
+        "images":["acy earbuds1.jpg"]
+
+    },
+    {
+        "id":"airpods",
+        "name":"Airpods",
+        "description":"Airpods by apple. Great sound and great battery life",
+        "price":"219.99",
+        "type":"headphones",
+        "categories":{
+            "subType":"earbuds",
+            "connection":"wireless",
+            "brand":"Apple"
+        },
+        "images":["airpods 1.jpg", "airpods 2.jpg", "airpods 3.jpg", "airpods 4.jpg"]
+    },
+	{
+        "id":"airpodspro",
+        "name":"Airpods Pro",
+        "description":"Airpods Pro. Latest Version. Better than ever.",
+        "price":"299.99",
+        "type":"headphones",
+        "categories":{
+            "subType":"earbuds",
+            "connection":"wireless",
+            "brand":"Apple"
+        },
+        "images":["airpods pro 1.jpg","airpods pro 2.jpg"]
+    },
+    {
+        "id":"alexa",
+        "name":"Amazon Alexa",
+        "description":"Introducing Alexa, the smart speaker by Amazon.",
+        "price":"299.99",
+        "type":"speakers",
+        "categories":{
+            "subType":"smart",
+            "connection":"wireless",
+            "brand":"Amazon"
+        },
+        "images":["amazon alexa 1.jpg"]
     },
     {
         "id":"sheiserpilot",
