@@ -314,3 +314,17 @@ window.productsData=[
         "images":["sennheiser headphones 1.jpg"]
     }
 ]
+
+window.categoryLabels={
+
+    "type": "Device Type",
+    "subType": "Category",
+    "headphones": "Headphones",
+    "speakers":"Speakers",
+    "overtheear":"Over the ear",
+    "earbuds": "Earbuds",
+    "smart": "Smart Speakers",
+    "regular": "Regular Speakers",
+    "wireless":"Wireless",
+    "wired":"Wired"
+}

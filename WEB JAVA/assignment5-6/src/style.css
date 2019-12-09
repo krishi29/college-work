@@ -1,11 +1,13 @@
 /** Add any CSS you need to this file. */
 /* Add a black background color to the top navigation */
+
 body{
   margin:0;
 }
 
 html { 
   font-family: Gotham, Verdana, sans-serif;
+  font-size: 15px;
   font-style:normal;
   font-weight:400;
   color:initial;
@@ -22,14 +24,16 @@ html {
     padding: 20px 0 0 0;
     background-color: #161616;
     display: flex;
-    opacity: 0.8;
     top:0;
     position: sticky;
     z-index: 99;
+    text-align: start;
 }
 
 .logoContainer{
   min-width:15%;
+  padding-top: 3px;
+  padding-left: 8px;
 }
 
 .menulink{
@@ -46,7 +50,6 @@ html {
   align-content: right;
   text-align: left;
   text-decoration: none;
-  font-size: 16px;
   border: 0 none;
   margin: 0;
   padding: 0;
@@ -60,6 +63,13 @@ html {
 
 .searchcontainer input:focus{
   outline: none;
+}
+
+input[type="checkbox"]{
+  width:16px;
+  height:16px;
+  vertical-align: middle;
+  margin-top:0;
 }
 
 .searchcontainer{
@@ -103,15 +113,18 @@ html {
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  padding-inline-start: 40px;
+  padding-inline-start: 25px;
   position: absolute;
   right: 10%;
 }
 
 .banner-section{
-  min-height:70px;
+  min-height:80px;
   min-width:100%;
   float:left;
+  text-align: center;
+  padding-top: none;
+  font-size: 40px;
 }
 
 .content-section{
@@ -141,23 +154,27 @@ html {
   max-width: 100%;   
   max-height: 40px;
   float: left; 
+  margin-top: 10px;
 }
 
 .collapsible {
-  background-color: #161616;
-  color: white;
+  color: black;
   padding: 8px;
   margin: 2px;
   border: none;
+  border-bottom: solid 1px;
   text-align: left;
   outline: none;
-  font-size: 15px;
-  border-radius: 10px;
   width: 95%;
+  background-color: #fff;
+  font-weight: 700;
+  font-family: Gotham, Verdana, sans-serif;
+  font-size: 15px;
+  font-style:normal;
 }
 
-.active, .collapsible:hover {
-  background-color: #555;
+.collapsible:hover {
+  cursor: pointer;  
 }
 
 .content {
@@ -165,8 +182,36 @@ html {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
   border-radius: 10px;
+}
+
+.content div{
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+
+.content label{
+  padding-left: 4px;
+  margin-top:10px;
+}
+
+.selectAllDiv{
+  margin-bottom: 12px;
+  margin-top: 5px;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.selectOnlySpan{
+  text-decoration: underline;
+  font-style: italic;
+  margin-left: 5px;
+  float:right;
+  margin-right: 10px;
+}
+
+.selectAllDiv:hover, .selectOnlySpan:hover{
+  cursor: pointer;
 }
 
 .product-section{
@@ -180,7 +225,6 @@ html {
   position:relative;
   margin: 0px 15px 60px 15px;
   font-weight: 600;
-  font-size:14px;
 }
 
 .product-images img{
@@ -223,7 +267,6 @@ html {
   margin-top: -22px;
   color: white;
   font-weight: bold;
-  font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
@@ -270,4 +313,8 @@ html {
 
 .activeimage{
   opacity: 1;
+}
+
+.invisible{
+  display:none;
 }
