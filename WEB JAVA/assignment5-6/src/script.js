@@ -11,6 +11,42 @@ function setupPage() {
     categoryDiv.innerHTML = "";
     setupCheckboxes();
     showAllProducts();
+    setupProductTopNavOptions();
+}
+
+function setupProductTopNavOptions(){
+    var coll = document.getElementById("product-menulink");
+    var i;
+
+    coll.addEventListener("mouseover", function () {
+        this.classList.toggle("active");
+        var content = document.getElementById("product-topnav-section-div")
+        content.style.maxHeight = content.scrollHeight + "px";
+        var contentSection = document.querySelector(".content-section");
+        contentSection.style.opacity=0.2;
+    });
+
+    var topnavProductDiv = document.getElementById("product-topnav-section-div");
+
+    topnavProductDiv.addEventListener("mouseleave", function() {
+        if(this.style.maxHeight){
+            this.style.maxHeight = null;
+            var contentSection = document.querySelector(".content-section");
+            contentSection.style.opacity=1;
+        }
+    });
+}
+
+
+function selectProductMenu(key, value){
+    for(let item in availableCategories){
+        selectAll(item);
+    }
+    var content = document.getElementById("product-topnav-section-div")
+    content.style.maxHeight = null;
+    var contentSection = document.querySelector(".content-section");
+    contentSection.style.opacity=1;
+    selectOne(key, value);
 }
 
 function setupCollapsibleButtons(){

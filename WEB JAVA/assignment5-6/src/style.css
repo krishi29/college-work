@@ -17,6 +17,14 @@ html {
   background-size: cover;
 }
 
+.topnav-container{
+  position:fixed;
+  top:0;
+  width: 100%;
+  min-height: 200px;
+  z-index: 999;
+}
+
 .topnav {
     background-color: #333;
     overflow: hidden;
@@ -25,7 +33,6 @@ html {
     background-color: #161616;
     display: flex;
     top:0;
-    position: sticky;
     z-index: 99;
     text-align: start;
 }
@@ -58,11 +65,19 @@ html {
   background: transparent;
   transition: width .6s;
   caret-color:#fff;
-  color: #fff
+  color: #fff;
 }
 
 .searchcontainer input:focus{
   outline: none;
+}
+
+.topnav-label{
+  color:white;
+  min-width: 20px;
+  display: block;
+  font-weight:500;
+  padding-bottom:20px;
 }
 
 input[type="checkbox"]{
@@ -70,6 +85,10 @@ input[type="checkbox"]{
   height:16px;
   vertical-align: middle;
   margin-top:0;
+}
+
+.product-image{
+  margin:20px;
 }
 
 .searchcontainer{
@@ -119,10 +138,17 @@ input[type="checkbox"]{
 }
 
 .banner-section{
-  min-height:80px;
+  min-height:120px;
   min-width:100%;
 }
 
+.footer-section{
+  min-height: 100px;
+  width:100%;
+  background-color: black;
+  position:sticky;
+  bottom:0;
+}
 .content-section{
   margin-left: 7.5%;
   margin-right: 7.5%;
@@ -151,6 +177,37 @@ input[type="checkbox"]{
   max-height: 40px;
   float: left; 
   margin-top: 10px;
+}
+
+.products-nav-img-div{
+  transition: opacity 1s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+}
+
+.products-nav-img-div img{
+  max-height:300px;
+  max-width:300px;
+  transition: opacity 1s ease-in-out;
+}
+
+.product-nav-section-container{
+  position: absolute;
+  height: 100%;
+}
+
+.product-topnav-section{
+  position: sticky;
+  padding: 0 10px;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color:black;
+  width:100%;
+  display:flex;
+  padding-left:15%;
+  padding-right: 15%;
+  z-index: 999;
+  max-height: 0;
 }
 
 .collapsible {
