@@ -66,6 +66,19 @@ function setupCollapsibleButtons(){
     }
 }
 
+function toggleSlideoutForm(){
+    
+    var buttonDiv = document.querySelector(".contact-flyout-button-div");
+    var contentSection = document.querySelector(".content-section");
+    if(buttonDiv.style.minWidth !== '0px'){
+        buttonDiv.style.minWidth="0px";
+        contentSection.style.opacity=0.2;
+    }else{
+        buttonDiv.style.minWidth = "100%";
+        contentSection.style.opacity=1;
+    }
+}
+
 function setupCheckboxes() {
     availableCategories.type = new Set();
     availableCategories.subType = new Set();
