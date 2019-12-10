@@ -71,6 +71,11 @@ html {
   outline: none;
 }
 
+.searchcontainer i{
+  padding-right: 50px;
+  line-height: 65px;
+}
+
 .topnav-label{
   color:white;
   min-width: 20px;
@@ -92,7 +97,7 @@ input[type="checkbox"]{
 
 .searchcontainer{
   width:50%;
-  align-content: right;
+  text-align: right;
 }
 
 .navcontainer{
@@ -518,4 +523,9 @@ input[type=submit]:hover {
   float:right;
   padding-right: 50px;
   padding-top:15px;
+}
+
+.fa-shopping-cart{
+  color:white;
+  padding-bottom: 5px;
 }
