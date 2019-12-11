@@ -13,15 +13,7 @@
 </head>
 
 <body>
-  <!--
-      Part 1: Main Store Page
 
-      Requirements:
-
-      1. Navbar or Title bar across the top must include your store's naeme, logo,
-      and use a darker background colour, different font, etc.  You must also include
-      a link to your contact.html page.
-      -->
   <div class="topnav-container">
     <div class="topnav">
       <div class="navcontainer">
@@ -76,24 +68,7 @@
     <div id="products" class="product-section">
     </div>
   </div>
-  <!--
-      2. Header below the navbar with store Title in appropriate font, as well
-      as info about what the store is, what it sells, etc.  Use some images to
-      try and draw the user in.  NOTE: place all your site's images in the
-      src/images/ directory.
 
-      5. Below the items, a footer with the name of the store, any relevant links you
-      need to give users, as well as a small HTML form for entering an Email
-      address and clicking Subscribe to subscribe to the store's newsletter. Use
-      https://formspree.io/ to automatically submit the form to your email address
-      (i.e., when a user fills out their email address and clicks submit, *you*
-      should get that information sent to your email address via formspree.io).
-
-
-        - https://unsplash.com/ for images
-        - https://fontawesome.com/ for icons
-        - https://gallery.manypixels.co/ or https://undraw.co/illustrations for illustrations (SVG)
-      -->
   <div class="sidebar">
     <div class="contact-form-section">
       <div class="contact-flyout-button-div">
@@ -101,15 +76,15 @@
             class="vertical-label">Contact Us</label></button>
       </div>
       <div class="contact-form">
-          <form action="https://formspree.io/mvogllbw" method="POST">
-            <label for="fname">Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your full name..">
+          <form name="contactForm" action="https://formspree.io/mvogllbw" method="POST" onsubmit="return validateForm()">
+            <label for="fname">Full Name <span id="name-mandatory"class="mandatory">*</span></label>
+            <input type="text" id="fname" name="firstname" required minlength="2" maxlength="25" placeholder="Your full name..">
         
-            <label for="email">Email Address</label>
-            <input type="text" id="email" name="email" placeholder="Your email address..">
+            <label for="email">Email Address <span id="email-mandatory"class="mandatory">*</span></label>
+            <input type="email" id="email" name="email" required minlength="3" maxlength="25" placeholder="Your email address..">
 
-            <label for="address">Address</label>
-            <input type="text" id="address" name="address" placeholder="Address">
+            <label for="address">Address <span id="address-mandatory"class="mandatory">*</span></label>
+            <input type="text" id="address" name="address" required minlength="3" maxlength="25" placeholder="Address">
         
             <label for="province">Province</label>
             <select id="province", name="province" aria-placeholder="Province">
@@ -128,8 +103,8 @@
                 <option value="YT">Yukon</option>
               </select>	
         
-            <label for="subject">Subject</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            <label for="subject">Subject <span id="subject-mandatory"class="mandatory">*</span></label>
+            <textarea id="subject" name="subject" required placeholder="Write something.." style="height:200px"></textarea>
         
             <input type="submit" value="Submit">
           </form>
@@ -147,7 +122,7 @@
     <div class="subscribe-section">
         <form action="https://formspree.io/mvogllbw" method="POST">
           <label for="email">Email Address</label>
-          <input type="text" id="email" name="email" placeholder="Your email address..">
+          <input type="email" required id="email" name="email" placeholder="Your email address..">
           <input type="submit" value="Submit">
         </form>
     </div>
