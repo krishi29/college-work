@@ -6,7 +6,7 @@ var availableCategories = {};
 
 function setupPage() {
     var productsDiv = document.getElementById("products");
-    productsDiv.innerHTML="";
+    productsDiv.innerHTML = "";
     var categoryDiv = document.getElementById("categorySection");
     categoryDiv.innerHTML = "";
     setupCheckboxes();
@@ -14,47 +14,47 @@ function setupPage() {
     setupProductTopNavOptions();
 }
 
-function setupProductTopNavOptions(){
+function setupProductTopNavOptions() {
     var coll = document.getElementById("product-menulink");
-    var i;
 
-    coll.addEventListener("mouseover", function () {
+    coll.addEventListener("mouseover", function() {
         this.classList.toggle("active");
-        var content = document.getElementById("product-topnav-section-div")
+        var content = document.getElementById("product-topnav-section-div");
         content.style.maxHeight = content.scrollHeight + "px";
         var contentSection = document.querySelector(".content-section");
-        contentSection.style.opacity=0.2;
+        contentSection.style.opacity = 0.2;
     });
 
-    var topnavProductDiv = document.getElementById("product-topnav-section-div");
+    var topnavProductDiv = document.getElementById(
+        "product-topnav-section-div"
+    );
 
     topnavProductDiv.addEventListener("mouseleave", function() {
-        if(this.style.maxHeight){
+        if (this.style.maxHeight) {
             this.style.maxHeight = null;
             var contentSection = document.querySelector(".content-section");
-            contentSection.style.opacity=1;
+            contentSection.style.opacity = 1;
         }
     });
 }
 
-
-function selectProductMenu(key, value){
-    for(let item in availableCategories){
+function selectProductMenu(key, value) {
+    for (let item in availableCategories) {
         selectAll(item);
     }
-    var content = document.getElementById("product-topnav-section-div")
+    var content = document.getElementById("product-topnav-section-div");
     content.style.maxHeight = null;
     var contentSection = document.querySelector(".content-section");
-    contentSection.style.opacity=1;
+    contentSection.style.opacity = 1;
     selectOne(key, value);
 }
 
-function setupCollapsibleButtons(){
+function setupCollapsibleButtons() {
     var coll = document.getElementsByClassName("collapsible");
     var i;
 
     for (i = 0; i < coll.length; i++) {
-        coll[i].addEventListener("click", function () {
+        coll[i].addEventListener("click", function() {
             this.classList.toggle("active");
             var content = this.nextElementSibling;
             if (content.style.maxHeight) {
@@ -66,16 +66,15 @@ function setupCollapsibleButtons(){
     }
 }
 
-function toggleSlideoutForm(){
-    
+function toggleSlideoutForm() {
     var buttonDiv = document.querySelector(".contact-flyout-button-div");
     var contentSection = document.querySelector(".content-section");
-    if(buttonDiv.style.minWidth !== '0px'){
-        buttonDiv.style.minWidth="0px";
-        contentSection.style.opacity=0.2;
-    }else{
+    if (buttonDiv.style.minWidth !== "0px") {
+        buttonDiv.style.minWidth = "0px";
+        contentSection.style.opacity = 0.2;
+    } else {
         buttonDiv.style.minWidth = "100%";
-        contentSection.style.opacity=1;
+        contentSection.style.opacity = 1;
     }
 }
 
@@ -91,8 +90,8 @@ function setupCheckboxes() {
         availableCategories.Brand.add(product.categories.brand);
         availableCategories.Connection.add(product.categories.connection);
     }
-    
-    for(let key in availableCategories){
+
+    for (let key in availableCategories) {
         addCheckBoxes(key, availableCategories[key]);
         userSelection[key] = Array.from(availableCategories[key]);
     }
@@ -100,57 +99,62 @@ function setupCheckboxes() {
     setupCollapsibleButtons();
 }
 
-function updateSelection(key, value, checkBoxItem){
-    if(!userSelection[key]){
+function updateSelection(key, value, checkBoxItem) {
+    if (!userSelection[key]) {
         userSelection[key] = [];
     }
-    if(checkBoxItem.checked){
+    if (checkBoxItem.checked) {
         userSelection[key].push(value);
-    }else{
-        if(userSelection[key].length == 1){
+    } else {
+        if (userSelection[key].length == 1) {
             checkBoxItem.checked = true;
             return;
         }
-        userSelection[key] =  userSelection[key].filter(e => e !== value);
+        userSelection[key] = userSelection[key].filter(e => e !== value);
     }
-    
+
     filterBySelection();
 }
 
-function filterBySelection(){
+function filterBySelection() {
+    for (let item of productsData) {
+        var typeMatch =
+            !userSelection["type"] || userSelection["type"].includes(item.type);
+        var subTypeMatch =
+            !userSelection["subType"] ||
+            userSelection["subType"].includes(item.categories.subType);
+        var connectionMatch =
+            !userSelection["Connection"] ||
+            userSelection["Connection"].includes(item.categories.connection);
+        var brandMatch =
+            !userSelection["Brand"] ||
+            userSelection["Brand"].includes(item.categories.brand);
 
-    for(let item of productsData){
-        var typeMatch = !userSelection['type'] || userSelection['type'].includes(item.type);
-        var subTypeMatch = !userSelection['subType'] || userSelection['subType'].includes(item.categories.subType);
-        var connectionMatch = !userSelection['Connection'] || userSelection['Connection'].includes(item.categories.connection);
-        var brandMatch = !userSelection['Brand'] || userSelection['Brand'].includes(item.categories.brand);
-        
-        if(typeMatch && subTypeMatch && connectionMatch && brandMatch){
+        if (typeMatch && subTypeMatch && connectionMatch && brandMatch) {
             document.getElementById(item.id).classList.remove("invisible");
-        }else{
+        } else {
             document.getElementById(item.id).classList.add("invisible");
         }
     }
-
 }
 
-function setAllCheckBoxes(key, checked){
+function setAllCheckBoxes(key, checked) {
     var categoryDiv = document.getElementById(key);
     var checkBoxList = categoryDiv.querySelectorAll('input[type="checkbox"]');
-    for(let item of checkBoxList){
+    for (let item of checkBoxList) {
         item.checked = checked;
     }
 }
 
-function selectAll(key){
+function selectAll(key) {
     setAllCheckBoxes(key, true);
     userSelection[key] = Array.from(availableCategories[key]);
     filterBySelection();
 }
 
-function selectOne(key, value){
+function selectOne(key, value) {
     setAllCheckBoxes(key, false);
-    var target = document.getElementById(key+"_"+value);
+    var target = document.getElementById(key + "_" + value);
     target.checked = true;
     userSelection[key] = [];
     userSelection[key].push(value);
@@ -158,12 +162,11 @@ function selectOne(key, value){
 }
 
 function addCheckBoxes(key, valueSet) {
-
     var categorySection = document.getElementById("categorySection");
 
     var categoryButton = document.createElement("button");
     categoryButton.setAttribute("class", "collapsible");
-    categoryButton.innerText = categoryLabels[key]?categoryLabels[key]:key;
+    categoryButton.innerText = categoryLabels[key] ? categoryLabels[key] : key;
 
     categorySection.appendChild(categoryButton);
 
@@ -175,8 +178,8 @@ function addCheckBoxes(key, valueSet) {
     selectAllDiv.setAttribute("class", "selectAllDiv");
 
     var selectAllAnchor = document.createElement("a");
-    selectAllAnchor.innerText="Select All";
-    selectAllAnchor.onclick = function(){
+    selectAllAnchor.innerText = "Select All";
+    selectAllAnchor.onclick = function() {
         selectAll(key);
     };
 
@@ -184,26 +187,30 @@ function addCheckBoxes(key, valueSet) {
     categoryDiv.appendChild(selectAllDiv);
 
     for (let value of valueSet) {
-
         var checkBoxDiv = document.createElement("div");
 
         var checkBoxInput = document.createElement("input");
         checkBoxInput.setAttribute("type", "checkbox");
         checkBoxInput.setAttribute("id", key + "_" + value);
         checkBoxInput.setAttribute("name", value);
-        checkBoxInput.setAttribute("onclick", "updateSelection('"+key+"','"+value+"',this)");
+        checkBoxInput.setAttribute(
+            "onclick",
+            "updateSelection('" + key + "','" + value + "',this)"
+        );
         checkBoxInput.setAttribute("checked", true);
 
         checkBoxDiv.appendChild(checkBoxInput);
 
         var labelElement = document.createElement("label");
-        labelElement.setAttribute("for", key+"_"+value);
-        labelElement.innerText=categoryLabels[value]?categoryLabels[value]:value;
-        
+        labelElement.setAttribute("for", key + "_" + value);
+        labelElement.innerText = categoryLabels[value]
+            ? categoryLabels[value]
+            : value;
+
         var selectOnlySpan = document.createElement("span");
         selectOnlySpan.setAttribute("class", "selectOnlySpan");
         selectOnlySpan.innerText = "only";
-        selectOnlySpan.onclick = function(){
+        selectOnlySpan.onclick = function() {
             selectOne(key, value);
         };
 
@@ -216,10 +223,9 @@ function addCheckBoxes(key, valueSet) {
     categorySection.appendChild(categoryDiv);
 }
 
-
 function plusSlides(productId) {
     var activeIdx = getCurrentCarouselIdx(productId);
-    showSlides(productId, (activeIdx + 1));
+    showSlides(productId, activeIdx + 1);
 }
 
 function prevSlide(productId) {
@@ -244,7 +250,9 @@ function showSlides(productId, n) {
     }
     images[n].setAttribute("class", "activeimage");
 
-    var dots = document.getElementById(productId + "-dots").getElementsByTagName("SPAN");
+    var dots = document
+        .getElementById(productId + "-dots")
+        .getElementsByTagName("SPAN");
     for (let element of dots) {
         if (element.getAttribute("class")) {
             element.setAttribute("class", "dot");
@@ -259,7 +267,7 @@ function getCurrentCarouselIdx(productId) {
 
     var activeIdx = 0;
     for (let element of images) {
-        if (element.className === 'activeimage') {
+        if (element.className === "activeimage") {
             break;
         }
         activeIdx++;
@@ -272,7 +280,7 @@ function showAllProducts() {
     showProducts(productsData);
 }
 
-function showProducts(products){
+function showProducts(products) {
     var productsDiv = document.getElementById("products");
 
     for (var i = 0; i < products.length; i++) {
@@ -284,7 +292,10 @@ function showProducts(products){
         productCard.setAttribute("id", element.id);
 
         //create div for images
-        var imagesDiv = createProductImageCarouselElement(element.id, element.images)
+        var imagesDiv = createProductImageCarouselElement(
+            element.id,
+            element.images
+        );
         productCard.appendChild(imagesDiv);
 
         //create div for dots
@@ -307,7 +318,7 @@ function createProductDetailslElement(element) {
     var ulElement = document.createElement("ul");
 
     var nameElement = document.createElement("li");
-    nameElement.innerText = element.name + "  -  $" + element.price;;
+    nameElement.innerText = element.name + "  -  $" + element.price;
     ulElement.appendChild(nameElement);
 
     var priceElement = document.createElement("li");
@@ -322,7 +333,6 @@ function createProductDetailslElement(element) {
 
 var imageFolder = "./images/products/";
 function createProductImageCarouselElement(productId, images) {
-
     var imagesDiv = document.createElement("div");
     imagesDiv.setAttribute("class", "product-images");
 
@@ -369,7 +379,10 @@ function createDotSpan(productId, images) {
     for (idx = 0; idx < images.length; idx++) {
         var dot = document.createElement("span");
         dot.setAttribute("class", "dot");
-        dot.setAttribute("onClick", "showSlides('" + productId + "'," + idx + ")");
+        dot.setAttribute(
+            "onClick",
+            "showSlides('" + productId + "'," + idx + ")"
+        );
         dots.appendChild(dot);
     }
     return dots;
