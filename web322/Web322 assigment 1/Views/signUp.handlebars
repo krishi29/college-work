@@ -1,25 +1,66 @@
-<form method="POST" action="/">
-    <label for="yourName">Your name</label><br>
-    <input type="text" name="yourName" placeholder="YourName"> <br>
+<div class="form">
+    <span>
+        {{#if valid}}
 
-    <label for="email">Email</label><br>
-    <input type="text" name="email" placeholder="Enter Email"> <br>
+        /*
+        {{#each errors}}
 
-    <label for="psw"><b>Password</b></label><br>
-    <input type="password" placeholder="Enter Password" name="psw" minlength="6" required><br>
+    <div >{{this}}</div>
+{{/each}}
 
-    <label for="psw-again"><b>Password Again</b></label><br>
-    <input type="password" placeholder="Password Again" name="psw-again" required><br>
+/*
+        <div>{{successMessage}}</div>
+        <form class="form" action="/registration" method="POST">
 
-    <label>
-        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-    </label><br>
+            <label for="firstname">First Name</label>
+            <input type="text" {{#if errorID.firstname}} class="error_redFrame" {{/if}} id="firstname" name="firstname"
+                autocomplete="first name" placeholder="John" value="{{data.firstname}}">
+            <div class="warningMessage">{{error.firstname}}</div>
 
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
-    <div class="clearfix">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <button type="submit" class="signupbtn">Sign Up</button>
-    </div>
-    </div>
-</form>
+
+            <label for="lastname">Last Name</label>
+            <input type="text" {{#if errorID.lastname}} class="error_redFrame" {{/if}} id="lastname" name="lastname"
+                autocomplete="last name" placeholder="Smith" value="{{data.lastname}}">
+            <div class="warningMessage">{{error.lastname}}</div><br>
+
+            <label for="email">Email</label>
+            <input type="text" {{#if errorID.email}} class="error_redFrame" {{/if}} id="email" name="email"
+                autocomplete="email" placeholder="abc@gmail.com" value="{{data.email}}">
+            <div class="warningMessage">{{error.email}}</div><br>
+
+            label for="psw"><b>Password</b></label><br>
+            <input type="password" placeholder="Enter Password" name="psw" {{#if errorID.password}}
+                class="error_redFrame" {{/if}} id="password" name="password" autocomplete="new-password"
+                placeholder="6-8 mixed numbers and letters only" value="{{data.password}}">
+            <div class="warningMessage">{{error.password}}</div><br>
+            <br>
+
+            <label for="psw-again"><b>Password Again</b></label><br>
+            <input type="password" placeholder="Password Again" name="psw-again" {{#if errorID.passwordagain}}
+                class="error_redFrame" {{/if}} id="Password Again" autocomplete="new-password"
+                placeholder="re-enter password" value="{{data.passwordagain}}">
+            <div class="warningMessage">{{error.passwordagain}}</div> <br>required><br>
+
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label><br>
+
+            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+            <div class="clearfix">
+                <button type="button" class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn">Sign Up</button>
+            </div>
+
+        </form>
+         {{else}}
+        <div class=center>
+            <h1>Welcome!</h1><br>
+            <h1> {{data.email}}!</h1><br>
+            <h1>Login Already, Enjoy!</h1><br>
+        </div>
+
+        {{/if}}
+    </span>
+</div>

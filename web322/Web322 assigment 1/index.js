@@ -14,6 +14,8 @@ app.set("view engine", "handlebars");
 
 app.use(express.static("static"));
 
+const expressValidator = require('express-validator');
+
 //Route for the Home Page
 app.get("/", (req, res) => {
   res.render("index", {
@@ -68,6 +70,14 @@ app.get("/sign-In", (req, res) => {
     headingInfo: "Sign In Page"
   });
 });
+
+//load controllers
+const generalController = require("./controllers/general");
+const productController = require("./controllers/product");
+
+//map each controller to the app object
+app.use("/", generalController);
+app.use("/product", productController);
 
 const PORT = 3000;
 //This creates an Express Web Server that listens to HTTP Reuqest on port 3000

@@ -1,15 +1,29 @@
-<form method="POST" action="/">
-    <label for="email">Email</label><br>
-    <input type="text" name="email" placeholder="Enter Email"> <br>
 
-    <label for="psw"><b>Password</b></label><br>
-    <input type="password" placeholder="Enter Password" name="psw" required><br>
+{{#each errors}}
 
-    <button type="submit">Login</button><br><br>
-    <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label><br><br>
-    <button type="button" onclick="document.getElementById('id01').style.display='none'"
-        class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">Password?</a></span><br><br><br><br><br><br><br><br><br><br><br><br>
-</form>
+    <div >{{this}}</div>
+{{/each}}
+
+
+<div>{{successMessage}}</div>
+        <form method="POST" action="/">
+            <label for="email">Email</label><br>
+            <input type="text" {{#if errorID.email}} class="error_redFrame" {{/if}} id="email" name="email" <br>
+            autocomplete="email" placeholder="abc@gmail.com" value="{{data.email}}">
+            <div class="warningMessage">{{error.email}}</div>
+
+            label for="psw"><b>Password</b></label><br>
+            <input type="password" placeholder="Enter Password" name="psw" {{#if errorID.password}}
+                class="error_redFrame" {{/if}} id="password" name="password" autocomplete="new-password"
+                placeholder="6-8 mixed numbers and letters only" value="{{data.password}}">
+            <div class="warningMessage">{{error.password}}</div>
+            <br>
+
+            <button type="submit">Login</button><br><br>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label><br><br>
+            <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">Password?</a></span><br><br><br><br><br><br><br><br><br><br><br><br>
+        </form>
