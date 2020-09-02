@@ -18,7 +18,7 @@
     "clean": "rimraf assignment2.zip assignment2-submission"
   },
   "devDependencies": {
-    "bestzip": "^2.1.4",
+    "bestzip": "^2.1.7",
     "chai": "^4.2.0",
     "copyfiles": "^2.1.1",
     "eslint": "^6.4.0",
